@@ -26,12 +26,12 @@ class UrlController{
     static async redirectToOriginalUrl(req , res){
         try{
             const {shortUrl} = req.params;
-            const url = await URIError.findOne({shortUrl : shortUrl});
+            const url = await URlError.findOne({shortUrl : shortUrl});
             if(!url){
                 return res.status(404).send('URL NOT FOUND');
             }
             //increase the count
-            url.click += 1;
+            url.clicks += 1;
             await url.save();
             res.redirect(url.originalUrl);
         }catch(err){

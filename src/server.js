@@ -13,8 +13,10 @@ app.use(bodyParser.json());
 
 
 //middleware toIserv static files
+app.use('/', urlRoutes);
+
 // routes / ->urlRoutes.js
 
 app.listen(PORT, () => {
-    console.log('Server is running fine on ${PORT}');
+    console.log(`Server is running fine on ${PORT}`);
 })
