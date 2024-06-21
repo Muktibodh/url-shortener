@@ -26,7 +26,7 @@ class UrlController{
     static async redirectToOriginalUrl(req , res){
         try{
             const {shortUrl} = req.params;
-            const url = await URlError.findOne({shortUrl : shortUrl});
+            const url = await Url.findOne({shortUrl : shortUrl});
             if(!url){
                 return res.status(404).send('URL NOT FOUND');
             }
